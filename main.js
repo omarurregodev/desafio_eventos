@@ -1,7 +1,24 @@
 
 var userArray = [];
 
+let btnAdd = document.getElementById("btnUserAdd");
+let btnFilter = document.getElementById("btnFilter");
+let busquedaField = document.getElementById("busqueda");
+
 //var graphicArray = [];
+
+// AGREGO LOS LISTENERS DE LOS BOTONES
+btnAdd.addEventListener("click", newUser);
+btnFilter.addEventListener("click", filterAZ);
+
+// LISTENER PARA LA TECLA ENTER EN EL CAMPO DE BUSQUEDA DE PERFIL, O CUANDO SU VALUE CAMBIE
+busquedaField.addEventListener("keypress", (event)=> {
+	if (event.keyCode === 13) {
+		buscar();
+	}
+});
+busquedaField.addEventListener("change", buscar);
+
 
 function newUser() {
 
